@@ -41,7 +41,7 @@ class Model {
           // call game_end function (visual)
       }
     }
-  } // close timer
+  }
   send () {
     let currCard = this.currentQuestion
     let right = this.currentQuestion.answers.right
@@ -51,7 +51,7 @@ class Model {
       question: this.currentQuestion.Q,
       answer: answersArr
     }
-  } // QUESTION SEND?
+  }
     // slice or splice selected into current[] --> 2nd phase used[]
   randomQuest () { // look up js array randomizer
     console.log('running random question')
