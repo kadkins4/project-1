@@ -1,6 +1,7 @@
 PARKING LOT IDEAS
 
-// SHUFFLE THE OPTIONS
-optionShuffle () {
-  var opt_number = Math.floor(Math.random() * 4) + 1
-}
+-- WRONG = X
+  --> Sound?
+-- CORRECT = CHECK
+  --> Sound?
+  

@@ -9,19 +9,17 @@ class ModelView {
   }
   init () {
     this.display = {
-      correct: $('.a1'),
-      a2: $('.a2'),
-      a3: $('.a3'),
-      a4: $('.a4'),
+      option: $('.option'),
       prob: $('.problem'),
       time: $('.time'),
       pts: $('.points')
     }
   }
-  displayCard (card) {
-    let qIP = this.model.currCard.Q
-    let aIP = this.model.answersArr
+  displayCard () {
+    let qIP = this.model.currentQuestion.q
+    let aIP = this.model.currentQuestion.options
     $('prob').text(qIP)
+    $('option').text(aIP)
   }
   renderTimer () {
     this.model.timer.on('change', this.displayTime())

@@ -28,6 +28,7 @@ class Model {
         answer: 'Salted'
       }]
     this.currentQuestion = null // updates with randomQuest
+    this.currentScore = 0
   }
   timer () {
     var count = 60
@@ -42,31 +43,35 @@ class Model {
       }
     }
   }
-  send () {
-    let currCard = this.currentQuestion
-    let right = this.currentQuestion.answers.right
-    let wrong = this.currentQuestion.answers.wrong
-    // var answersArr = wrong.concat(right).sort(function () { return 0.5 - Math.random() })
-    return {
-      question: this.currentQuestion.Q,
-      answer: answersArr
+  // send () {
+  //   // var answersArr = wrong.concat(right).sort(function () { return 0.5 - Math.random() })
+  //   return { // QUESTION Do I need this?
+  //     question: this.currentQuestion.q,
+  //     options: this.currentQuestion.options
+  //   }
+  // }
+  displayCard () {
+    let qIP = this.currentQuestion.q
+    // let aIP = this.currentQuestion.options
+    $('.problem').text(qIP)
+    for (let i = 0; i <= 4; i++) {
+      $('.a' + i).text(this.currentQuestion.options[i])
     }
   }
     // slice or splice selected into current[] --> 2nd phase used[]
   randomQuest () { // look up js array randomizer
     console.log('running random question')
     this.currentQuestion = this.cards[Math.floor(Math.random() * this.cards.length)]
-    console.log(`changed this.current to: ${this.currentQuestion}`)
+    return this.displayCard(this.currentQuestion)
   }
   score (response) { // if correct: runs score + always runs visual response & randomQuest
     if (response === this.currentQuestion.answer) {
       console.log('correct')
-    // function visual response (visual)
-    // function score up (visual)
+      this.currentScore += 5 // score up
+      $('.points').text(this.currentScore) // function visual response (visual)
     } else {
-    // function visual response (visual)
       console.log('wrong')
     }
-    this.randomQuest()
+    return this.randomQuest()
   }
 } // close class model
