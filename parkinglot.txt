@@ -4,4 +4,6 @@ PARKING LOT IDEAS
   --> Sound?
 -- CORRECT = CHECK
   --> Sound?
-  
+-- QUESTIONS used put in separate array
+-- COUNTDOWN to Start
+-- MINUS points on wrong answer: -5 with skip option only -3

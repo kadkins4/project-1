@@ -14,13 +14,16 @@ class ModelView {
       time: $('.time'),
       pts: $('.points')
     }
+    $('a0').on('click', score())
+    this.option1 = $('.a0').on('click', console.log('CLICKED'))
   }
-  displayCard () {
-    let qIP = this.model.currentQuestion.q
-    let aIP = this.model.currentQuestion.options
-    $('prob').text(qIP)
-    $('option').text(aIP)
-  }
+  // displayCard () {
+  //   let qIP = this.model.currentQuestion.q
+  //   let aIP = this.model.currentQuestion.options
+  //   $('prob').text(qIP)
+  //   $('option').text(aIP)
+  // }
+
   renderTimer () {
     this.model.timer.on('change', this.displayTime())
   }

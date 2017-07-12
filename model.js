@@ -29,27 +29,23 @@ class Model {
       }]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
+    // this.option1 = $('.a0').on('click', console.log('CLICKED'))
   }
   timer () {
     var count = 60
     var counter = setInterval(time, 1000) // test good
     function time () {
       count = count - 1
+      $('.time').text(count)
       console.log(count)
       if (count === 0) {
         clearInterval(counter)
+        $('.time').text('TIME UP')
         console.log('over')
           // call game_end function (visual)
       }
     }
   }
-  // send () {
-  //   // var answersArr = wrong.concat(right).sort(function () { return 0.5 - Math.random() })
-  //   return { // QUESTION Do I need this?
-  //     question: this.currentQuestion.q,
-  //     options: this.currentQuestion.options
-  //   }
-  // }
   displayCard () {
     let qIP = this.currentQuestion.q
     // let aIP = this.currentQuestion.options
