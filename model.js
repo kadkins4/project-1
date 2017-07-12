@@ -11,29 +11,23 @@ console.log('1. Logic Ready')
 
 class Model {
   constructor () {
-    this.cards = [ // eventually, one line for each object
+    this.cards = [
       {
-        Q: 'Fish?',
-        1: 'Tilapia', // always correct
-        2: 'Cows',
-        3: 'Dogs',
-        4: 'Pencil'
+        q: 'Fish?',
+        options: ['Pencil', 'Dogs', 'Cows', 'Tilapia'],
+        answer: 'Tilapia'
       },
       {
-        Q: 'Pizza?',
-        1: 'Pepperoni', // always correct
-        2: 'Wanngggsss',
-        3: 'Tunes',
-        4: 'Aliens'
+        q: 'Pizza?',
+        options: ['Pepperoni', 'Wings', 'Tunes', 'Aliens'],
+        answer: 'Pepperoni'
       },
       {
-        Q: 'Peanuts?',
-        1: 'Salted', // always correct
-        2: 'Phones',
-        3: 'Cuba',
-        4: 'Mashed Potatoes'
+        q: 'Peanuts?',
+        options: ['Salted', 'Phones', 'Cuba', 'Mashed Potatoes'],
+        answer: 'Salted'
       }]
-    this.current = 0 // updates with randomQuest
+    this.currentQuestion = null // updates with randomQuest
   }
   timer () {
     var count = 60
@@ -48,20 +42,24 @@ class Model {
       }
     }
   } // close timer
-  getQuestion (card) {
-    console.log('getting question')
-    console.log(`this is this.cards[this.current] ${this.cards}[${this.current}]`)
-    return this.cards[this.current]
+  send () {
+    let currCard = this.currentQuestion
+    let right = this.currentQuestion.answers.right
+    let wrong = this.currentQuestion.answers.wrong
+    // var answersArr = wrong.concat(right).sort(function () { return 0.5 - Math.random() })
+    return {
+      question: this.currentQuestion.Q,
+      answer: answersArr
+    }
+  } // QUESTION SEND?
     // slice or splice selected into current[] --> 2nd phase used[]
-  }
   randomQuest () { // look up js array randomizer
     console.log('running random question')
-    this.current = Math.floor(Math.random() * this.cards.length) // QUESTION BIND
-    console.log(`changed this.current to: ${this.current}`)
-    this.getQuestion()
+    this.currentQuestion = this.cards[Math.floor(Math.random() * this.cards.length)]
+    console.log(`changed this.current to: ${this.currentQuestion}`)
   }
   score (response) { // if correct: runs score + always runs visual response & randomQuest
-    if (response === this.cards[this.current]['1']) {
+    if (response === this.currentQuestion.answer) {
       console.log('correct')
     // function visual response (visual)
     // function score up (visual)
@@ -71,9 +69,4 @@ class Model {
     }
     this.randomQuest()
   }
-  // send () {
-  //   console.log(`this.cards[this.current] is: ${this.cards[this.current]}`)
-  //   var shuffled = this.cards[this.current].concat().sort(function () { return 0.5 - Math.random() })
-  //   console.log = (shuffled)
-  // } // QUESTION SEND
 } // close class model
