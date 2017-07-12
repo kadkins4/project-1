@@ -50,15 +50,15 @@ class Model {
       }
     }
   } // close timer
-  getQuestion (i) {
-    console.log(this.cards[i])
-    return this.cards[i]
+  getQuestion (card) {
+    console.log(`this is this.card[this.current] ${this.cards}[${this.current}]`)
+    return this.cards[this.current]
     // slice or splice selected into current[] --> 2nd phase used[]
   }
   randomQuest () { // look up js array randomizer
-    var i = Math.floor(Math.random() * this.cards.length)
-    console.log(i)
-    return getQuestion(i)
+    this.current = Math.floor(Math.random() * this.cards.length)
+    console.log(`this is this.current: ${this.current}`)
+    return this.current
   }
   score (response) { // if correct: runs score + always runs generate and visual response
     if (response === this.cards[this.current]['1']) {
