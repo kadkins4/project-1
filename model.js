@@ -51,6 +51,7 @@ class Model {
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
+    this.usedCards = []
     this.div1 = $('.a0')
     this.div1.click(() => { this.score(this.div1.text()) })
     this.div2 = $('.a1')
