@@ -7,3 +7,6 @@ PARKING LOT IDEAS
 -- QUESTIONS used put in separate array
 -- COUNTDOWN to Start
 -- MINUS points on wrong answer: -5 with skip option only -3
+
+Copy paste template for new cards
+{q: '', options: ['', '', '', ''], answer: ''}

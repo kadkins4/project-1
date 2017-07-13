@@ -33,7 +33,23 @@ class Model {
       {q: 'The first commercial arcade video game was...', options: ['Computer Space', 'Space Invaders', 'Tecmo Bowl', 'Kong'], answer: 'Computer Space'},
       {q: '"Heroes never die" is the tagline from what hero in the game OverWatch', options: ['Mercy', 'Roadhog', 'Reaper', 'Tracer'], answer: 'Mercy'},
       {q: 'In the movie, "Aliens" the jokester, Private Hudson said this famous line', options: ['"Game over man, Game Over!"', '"Say hello to my little friend"', '"I\'m the guy who does his job..."', '"I have a particular set of skills"'], answer: ''},
-      {q: 'In a lot of popular competitive video games, these initials representing a region of the word is used to characterize bad gameplay', options: ['NA', 'EU', 'SEA', 'CIS'], answer: 'NA'}
+      {q: 'In a lot of popular competitive video games, these initials representing a region of the word is used to characterize bad gameplay', options: ['NA', 'EU', 'SEA', 'CIS'], answer: 'NA'},
+      {q: 'Camping in video games refers to:', options: ['Standing In One Spot', 'Running Around Carelessly', 'Trying Way Too Hard', 'Only Playing With Friends'], answer: 'Standing In One Spot'},
+      {q: "In OverWatch, one of D'Vas taunts is:", options: ['"Is this easy mode?"', '"I woke up like this"', '"I\'m making waffles!"', '"Let\'s break it down"'], answer: '"Is this easy mode?"'},
+      {q: "'Throwing' in games refers to:", options: ['A team squandering a substantial lead', 'Baiting a team into a bad play', '#1 rank vs #2 rank', 'Using items all at once'], answer: 'A team squandering a substantial lead'},
+      {q: 'What is the term used to show sarcasm or trolling', options: ['Kappa', 'Gamma', 'Delta', 'Lulzies'], answer: 'Kappa'},
+      {q: 'This company created two of the most popular esports (DOTA2 & CSGO)', options: ['Valve', 'Bethesda Studios', 'Bungie', 'Nintendo'], answer: 'Valve'},
+      {q: 'Bethesda Studios is known for creating Civilization, Elder Scrolls, & :', options: ['Fallout', 'Halo', 'Rainbow Six', 'Super Mario'], answer: 'Fallout'},
+      {q: 'This N64 Super Smash Bros hero is thought to be too strong because of his ability to fly for long periods of time', options: ['Kirby', 'Yoshi', 'Captain Falcon', 'Starfox'], answer: 'Kirby'},
+      {q: 'The letters OP in video games means:', options: ['Over-Powered', 'Optimal Power', 'Overly Predictable', 'Other Players'], answer: 'Over-Powered'},
+      {q: 'The eSports organization NIP stands for: ', options: ['Ninjas in Pyjamas', 'Noobs in Power', 'Neva in Playa', 'NIP'], answer: 'Ninjas in Pyjamas'},
+      {q: 'Lebron James made this statement, "I\'m taking my talents to..."', options: ['Miami', 'Florida', 'a better team', 'anywhere but Cleveland'], answer: 'Miami'},
+      {q: "In most online arena games, an ambush is called a(n)", options: ['gank', 'jump', 'OOOH WEEE', 'kappa'], answer: 'gank'},
+      {q: 'ESPN is to Sports, as ____ is to video games', options: ['Twitch', 'CNN', 'GameStop', 'Vulcun'], answer: 'Twitch'},
+      {q: 'In Rocket Power, this is the name Otto gives to people who wears shoes on the beach', options: ['Shoobie', 'Squid', 'Sam', 'Tourist'], answer: 'Shoobie'},
+      {q: 'The name of the creator of Nintendo is', options: ['Fusajiro Yamauchi', 'Mario Sanchez', 'Shigeru Miyamoto', 'Gaben'], answer: 'Fusajiro Yamauchi'},
+      {q: '', options: ['', '', '', ''], answer: ''}
+
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
