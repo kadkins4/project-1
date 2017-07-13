@@ -3,6 +3,10 @@ html {
   background-image: url('fresh-snow.png');
 }
 
+body:hover {
+  cursor: default;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -83,6 +87,10 @@ span {
   box-shadow: inset 0 10px 35px #000000;
 }
 
+.option:hover {
+  cursor: pointer;
+}
+
 .clock {
   width: 600px;
   display: flex;
@@ -108,17 +116,18 @@ span {
   font-family: fantasy;
   font-size: 60px;
 }
+
 .a0:active {
-  background-color: black;
+  background-color: #C7C4BC;
 }
 .a1:active {
-  background-color: black;
+  background-color: #C7C4BC;
 }
 .a2:active {
-  background-color: black;
+  background-color: #C7C4BC;
 }
 .a3:active {
-  background-color: black;
+  background-color: #C7C4BC;
 }
 
 .score {
