@@ -1,5 +1,6 @@
 html {
-  background: red;
+  background-color: #829FB3;
+  background-image: url('fresh-snow.png');
 }
 
 body {
@@ -14,9 +15,6 @@ h1 {
   font-size: 46px;
   text-transform: uppercase;
   font-family: 'Fondamento', cursive;
-  font-family: 'Kalam', cursive;
-  font-family: 'Tillana', cursive;
-  font-family: fantasy;
   margin: 0;
 }
 
@@ -37,36 +35,52 @@ span {
 .play {
   width: 950px;
   height: 600px;
-  background-color: grey;
+  background-color: #ABB9C8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border-radius: 20%;
+  box-shadow: 3px 3px rgba(0,0,0,.4), -1em 0 0.4em #D0F5FB;
 }
 
 .question-container {
   width: 750px;
   height: 200px;
-  border: 2px solid red;
+  border: 2px solid rgba(240,230,173,.2);
+  border-radius: 15%;
+  background: rgba(240,230,173,.2);
+}
+
+.problem {
+  font-family: 'Tillana', cursive;
+  font-size: 30px;
+  text-align: center;
 }
 
 .answer-container {
   height: 250px;
   width: 800px;
-  border: 3px solid blue;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: yellow;
+  background-color: transparent;
 }
 
 .option {
   height: 108px;
   width: 350px;
+  color: #5DEE66;
   text-align: center;
-  border: 4px solid blue;
+  border: 2px solid blue;
   margin: 5px;
+  font-family: 'Fondamento', cursive;
+  font-size: 26px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 17%;
+  box-shadow: inset 0 10px 35px #000000;
 }
 
 .clock {
@@ -79,8 +93,9 @@ span {
 .timer {
   width: 250px;
   height: 100px;
-  border: 4px solid black;
-  background: white;
+  border: 3px solid black;
+  background: rgba(241, 241, 212, 1);
+  background-image: url('gray-paper.png');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,12 +112,13 @@ span {
 .score {
   width: 300px;
   height: 100px;
-  border: 4px solid black;
-  background: white;
+  border: 3px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: rgba(241, 241, 212, 1);
+  background-image: url('gray-paper.png');
 }
 
 .points {

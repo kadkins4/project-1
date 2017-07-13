@@ -66,7 +66,6 @@ class Model {
     function time () {
       count = count - 1
       $('.time').text(count)
-      console.log(count)
       if (count === 0) {
         clearInterval(counter)
         $('.time').text('GG')
