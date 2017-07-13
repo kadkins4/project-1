@@ -108,6 +108,18 @@ span {
   font-family: fantasy;
   font-size: 60px;
 }
+.a0:active {
+  background-color: black;
+}
+.a1:active {
+  background-color: black;
+}
+.a2:active {
+  background-color: black;
+}
+.a3:active {
+  background-color: black;
+}
 
 .score {
   width: 300px;

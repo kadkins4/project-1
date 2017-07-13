@@ -33,7 +33,7 @@ class Model {
       {q: 'The first commercial arcade video game was...', options: ['Computer Space', 'Space Invaders', 'Tecmo Bowl', 'Kong'], answer: 'Computer Space'},
       {q: '"Heroes never die" is the tagline from what hero in the game OverWatch', options: ['Mercy', 'Roadhog', 'Reaper', 'Tracer'], answer: 'Mercy'},
       {q: 'In the movie, "Aliens" the jokester, Private Hudson said this famous line', options: ['"Game over man, Game Over!"', '"Say hello to my little friend"', '"I\'m the guy who does his job..."', '"I have a particular set of skills"'], answer: ''},
-      {q: 'In a lot of popular competitive video games, these initials representing a region of the word is used to characterize bad gameplay', options: ['NA', 'EU', 'SEA', 'CIS'], answer: 'NA'},
+      {q: 'In a lot of popular competitive video games, these initials representing a region of the world is used to characterize bad gameplay', options: ['NA', 'EU', 'SEA', 'CIS'], answer: 'NA'},
       {q: 'Camping in video games refers to:', options: ['Standing In One Spot', 'Running Around Carelessly', 'Trying Way Too Hard', 'Only Playing With Friends'], answer: 'Standing In One Spot'},
       {q: "In OverWatch, one of D'Vas taunts is:", options: ['"Is this easy mode?"', '"I woke up like this"', '"I\'m making waffles!"', '"Let\'s break it down"'], answer: '"Is this easy mode?"'},
       {q: "'Throwing' in games refers to:", options: ['A team squandering a substantial lead', 'Baiting a team into a bad play', '#1 rank vs #2 rank', 'Using items all at once'], answer: 'A team squandering a substantial lead'},
@@ -115,14 +115,14 @@ class Model {
   }
   initCount () {
     var initTime = 5
-    var initCount = setInterval(time, 1000)
+    var initCount = setInterval(time.bind(this), 1000)
     function time () {
       initTime = initTime - 1
       $('h1').text(initTime)
       if (initTime === 0) {
         clearInterval(initCount)
         $('h1').text('Good Luck, Have Fun')
-        // init() // QUESTION How do I 'this' this to make it work?!
+        this.init() // QUESTION How do I 'this' this to make it work?!
       }
     }
   }
