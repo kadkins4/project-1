@@ -8,28 +8,9 @@ class ModelView {
     this.model = model
   }
   init () {
-    this.display = {
-      option: $('.option'),
-      prob: $('.problem'),
-      time: $('.time'),
-      pts: $('.points')
-    }
-    $('a0').on('click', score())
-    this.option1 = $('.a0').on('click', console.log('CLICKED'))
-  }
-  // displayCard () {
-  //   let qIP = this.model.currentQuestion.q
-  //   let aIP = this.model.currentQuestion.options
-  //   $('prob').text(qIP)
-  //   $('option').text(aIP)
-  // }
-
-  renderTimer () {
-    this.model.timer.on('change', this.displayTime())
-  }
-  displayTime () {
-    (this.model.timer(), this.time)
+    $('.a0').on('click', console.log('CLICKED'))
+    $('.a1').on('click', console.log('CLICKED'))
+    $('.a2').on('click', console.log('CLICKED'))
+    $('.a3').on('click', console.log('CLICKED'))
   }
 }
-
-// display = send().question or .answer
