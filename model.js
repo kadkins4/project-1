@@ -44,12 +44,10 @@ class Model {
       {q: 'The letters OP in video games means:', options: ['Over-Powered', 'Optimal Power', 'Overly Predictable', 'Other Players'], answer: 'Over-Powered'},
       {q: 'The eSports organization NIP stands for: ', options: ['Ninjas in Pyjamas', 'Noobs in Power', 'Neva in Playa', 'NIP'], answer: 'Ninjas in Pyjamas'},
       {q: 'Lebron James made this statement, "I\'m taking my talents to..."', options: ['Miami', 'Florida', 'a better team', 'anywhere but Cleveland'], answer: 'Miami'},
-      {q: "In most online arena games, an ambush is called a(n)", options: ['gank', 'jump', 'OOOH WEEE', 'kappa'], answer: 'gank'},
+      {q: 'In most online arena games, an ambush is called a(n)', options: ['gank', 'jump', 'OOOH WEEE', 'kappa'], answer: 'gank'},
       {q: 'ESPN is to Sports, as ____ is to video games', options: ['Twitch', 'CNN', 'GameStop', 'Vulcun'], answer: 'Twitch'},
       {q: 'In Rocket Power, this is the name Otto gives to people who wears shoes on the beach', options: ['Shoobie', 'Squid', 'Sam', 'Tourist'], answer: 'Shoobie'},
-      {q: 'The name of the creator of Nintendo is', options: ['Fusajiro Yamauchi', 'Mario Sanchez', 'Shigeru Miyamoto', 'Gaben'], answer: 'Fusajiro Yamauchi'},
-      {q: '', options: ['', '', '', ''], answer: ''}
-
+      {q: 'The name of the creator of Nintendo is', options: ['Fusajiro Yamauchi', 'Mario Sanchez', 'Shigeru Miyamoto', 'Gaben'], answer: 'Fusajiro Yamauchi'}
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
@@ -75,10 +73,20 @@ class Model {
   }
   displayCard () {
     let qIP = this.currentQuestion.q
-    // let aIP = this.currentQuestion.options
+    let aIP = this.currentQuestion.options
     $('.problem').text(qIP)
+    function shuffleArray (array) {
+      for (var i = aIP.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1))
+        var temp = aIP[i]
+        aIP[i] = aIP[j]
+        aIP[j] = temp
+      }
+      return aIP
+    }
+    shuffleArray()
     for (let i = 0; i <= 4; i++) {
-      $('.a' + i).text(this.currentQuestion.options[i])
+      $('.a' + i).text(aIP[i])
     }
     // scoreInit()
   }
@@ -88,6 +96,7 @@ class Model {
     this.currentQuestion = this.cards[Math.floor(Math.random() * this.cards.length)]
     return this.displayCard(this.currentQuestion)
   }
+  // thought process -- the scoring doesn't start until initiated by user
   // scoreInit () {
     // if (this.div1 || this.div2 || this.div3 || this.div4) {
   score (response) { // if correct: runs score + always runs visual response & randomQuest
