@@ -12,8 +12,26 @@ body {
 
 h1 {
   font-size: 46px;
-  font-family: sans-serif;
+  text-transform: uppercase;
+  font-family: 'Fondamento', cursive;
+  font-family: 'Kalam', cursive;
+  font-family: 'Tillana', cursive;
+  font-family: fantasy;
   margin: 0;
+}
+
+span {
+  text-transform: lowercase;
+}
+
+.start-game {
+  display: block;
+  z-index: 1;
+  height: 200px;
+  width: 700px;
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .play {

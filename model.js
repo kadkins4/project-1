@@ -70,7 +70,7 @@ class Model {
       if (count === 0) {
         clearInterval(counter)
         $('.time').text('GG')
-        console.log('over')
+        $('h1').text('Quizzly')
           // QUESTION call game_end function (visual)
       }
     }
@@ -113,6 +113,17 @@ class Model {
     this.timer()
     this.randomQuest()
   }
+  initCount () {
+    var initTime = 5
+    var initCount = setInterval(time, 1000)
+    function time () {
+      initTime = initTime - 1
+      $('h1').text(initTime)
+      if (initTime === 0) {
+        clearInterval(initCount)
+        $('h1').text('Good Luck, Have Fun')
+        // init() // QUESTION How do I 'this' this to make it work?!
+      }
+    }
+  }
 } // close class model
-
-// QUESTION Start Game Init () -- randomQuest () && Timer ()
