@@ -29,7 +29,10 @@ class Model {
       }]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
-    // this.option1 = $('.a0').on('click', console.log('CLICKED'))
+    this.div1 = $('.a0').click(function () { console.log('CLICKED') })
+    this.div2 = $('.a1').click(function () { console.log('CLICKED') })
+    this.div3 = $('.a2').click(function () { console.log('CLICKED') })
+    this.div4 = $('.a3').click(function () { console.log('CLICKED') })
   }
   timer () {
     var count = 60
