@@ -61,15 +61,15 @@ class Model {
     this.div4.click(() => { this.score(this.div4.text()) })
   }
   timer () {
-    var count = 60
-    var counter = setInterval(time, 1000) // test good
+    var count = 75
+    var counter = setInterval(time, 1000)
     function time () {
       count = count - 1
       $('.time').text(count)
       console.log(count)
       if (count === 0) {
         clearInterval(counter)
-        $('.time').text('TIME UP')
+        $('.time').text('GG')
         console.log('over')
           // QUESTION call game_end function (visual)
       }
@@ -92,10 +92,9 @@ class Model {
     for (let i = 0; i <= 4; i++) {
       $('.a' + i).text(aIP[i])
     }
-    // scoreInit()
   }
     // QUESTION slice or splice selected into current[] --> 2nd phase used[]
-  randomQuest () { // look up js array randomizer
+  randomQuest () {
     console.log('running random question')
     this.currentQuestion = this.cards[Math.floor(Math.random() * this.cards.length)]
     return this.displayCard(this.currentQuestion)
@@ -110,8 +109,10 @@ class Model {
     }
     return this.randomQuest()
   }
-    // }
-  // }
+  init () {
+    this.timer()
+    this.randomQuest()
+  }
 } // close class model
 
 // QUESTION Start Game Init () -- randomQuest () && Timer ()
