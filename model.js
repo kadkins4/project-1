@@ -12,15 +12,15 @@ class Model {
     this.cards = [
       {q: 'Which of these is NOT a fish?', options: ['Filet Mignon', 'Gefilte', 'Tilapia', 'Herring'], answer: 'Filet Mignon' },
       {q: 'In Game of Thrones, this character pushed from a window in the first episode.', options: ['Bran', 'Tyrion', 'Ned', 'Arya'], answer: 'Bran'},
-      {q: 'What band sings the song, "Satisfaction"', options: ['The Rolling Stones', 'Dave Matthews Band', 'Red Hot Chili Peppers', 'Goo Goo Dolls'], answer: 'The Rolling Stones'},
+      {q: 'What band sings the song, "(I can\'t get no) Satisfaction"', options: ['The Rolling Stones', 'Dave Matthews Band', 'Red Hot Chili Peppers', 'Goo Goo Dolls'], answer: 'The Rolling Stones'},
       {q: "In Game of Thrones, the Lannister's sigil is a", options: ['Lion', 'Raven', 'Dire Wolf', 'Flower'], answer: 'Lion'},
       {q: 'Master Chief is the main character in what popular video game?', options: ['Halo', 'Counter-Strike', 'SuperMario', 'Star Wars: Battleground'], answer: 'Halo'},
       {q: 'Finish the lyrics, song by Alt-J: "...she may contain the urge to run away but hold her down with soggy clothes and ___."', options: ['breezeblocks', 'cash-money', 'fresh-drinks', 'truelove'], answer: 'breezeblocks'},
       {q: "The highest prize pool for DOTA 2's: The International Tournament was...", options: ['$20.5M', '$13.5M', '$100,000', '$234,450'], answer: '$20.5M'},
       {q: 'Which is not a type of beer', options: ['Irish Poppy Arguille', 'Indian Pale Ale', 'Stout', 'Wheat Ale'], answer: 'Irish Poppy Arguille'},
       {q: 'What store did Dev from Master of None say he was going to as a pickup line on a dating apps?', options: ['Whole Foods', 'Home Depot', 'eXXXotic', 'Target'], answer: 'Whole Foods'},
-      {q: "This band's lead singer was told by his father that he sung wonderfully off-key", options: ['Dave Matthews Band', 'Twenty-One Pilots', 'NSYNC', 'Backstreet Boys'], answer: 'Dave Matthews Band'},
-      {q: 'In CSGO, a knife kill awards how much money?', options: ['1500', '400', '2000', '850'], answer: '1500'},
+      {q: "This band's lead singer was told by his father that he sung 'wonderfully off-key'", options: ['Dave Matthews Band', 'Twenty-One Pilots', 'NSYNC', 'Backstreet Boys'], answer: 'Dave Matthews Band'},
+      {q: 'In Counter-Strike (CSGO), a knife kill awards how much money?', options: ['1500', '400', '2000', '850'], answer: '1500'},
       {q: 'In Washington, DC: this event takes place nearly every Friday during the summer months.', options: ['Jazz in the Garden', 'DiscotechaMecha', 'PoliticsNParties', 'Madness at the Mall'], answer: ''},
       {q: 'This artist is from Washington, DC', options: ['Wale', 'Sylvan Esso', 'Justin Timberlake', 'Trombone Shorty'], answer: 'Wale'},
       {q: 'As of spring 2017, the highest paid eSports player made $2,824,396 and his alias is:', options: ['UNiVeRsE', 'ppd', 'SumaiL', 'Fear'], answer: 'UNiVeRsE'},
@@ -41,7 +41,7 @@ class Model {
       {q: 'This company created two of the most popular esports (DOTA2 & CSGO)', options: ['Valve', 'Bethesda Studios', 'Bungie', 'Nintendo'], answer: 'Valve'},
       {q: 'Bethesda Studios is known for creating Civilization, Elder Scrolls, & :', options: ['Fallout', 'Halo', 'Rainbow Six', 'Super Mario'], answer: 'Fallout'},
       {q: 'This N64 Super Smash Bros hero is thought to be too strong because of his ability to fly for long periods of time', options: ['Kirby', 'Yoshi', 'Captain Falcon', 'Starfox'], answer: 'Kirby'},
-      {q: 'The letters OP in video games means:', options: ['Over-Powered', 'Optimal Power', 'Overly Predictable', 'Other Players'], answer: 'Over-Powered'},
+      {q: 'The letters O.P. in video games means:', options: ['Over-Powered', 'Optimal Power', 'Overly Predictable', 'Other Players'], answer: 'Over-Powered'},
       {q: 'The eSports organization NIP stands for: ', options: ['Ninjas in Pyjamas', 'Noobs in Power', 'Neva in Playa', 'NIP'], answer: 'Ninjas in Pyjamas'},
       {q: 'Lebron James made this statement, "I\'m taking my talents to..."', options: ['Miami', 'Florida', 'a better team', 'anywhere but Cleveland'], answer: 'Miami'},
       {q: 'In most online arena games, an ambush is called a(n)', options: ['gank', 'jump', 'OOOH WEEE', 'kappa'], answer: 'gank'},
@@ -51,10 +51,14 @@ class Model {
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
-    // this.div1 = $('.a0').click(function () { score(($('.a0').text())) })
-    // this.div2 = $('.a1').click(function () { score(($('.a1').text())) })
-    // this.div3 = $('.a2').click(function () { score(($('.a2').text())) })
-    // this.div4 = $('.a3').click(function () { score(($('.a3').text())) })
+    this.div1 = $('.a0')
+    this.div1.click(() => { this.score(this.div1.text()) })
+    this.div2 = $('.a1')
+    this.div2.click(() => { this.score(this.div2.text()) })
+    this.div3 = $('.a2')
+    this.div3.click(() => { this.score(this.div3.text()) })
+    this.div4 = $('.a3')
+    this.div4.click(() => { this.score(this.div4.text()) })
   }
   timer () {
     var count = 60
@@ -67,7 +71,7 @@ class Model {
         clearInterval(counter)
         $('.time').text('TIME UP')
         console.log('over')
-          // call game_end function (visual)
+          // QUESTION call game_end function (visual)
       }
     }
   }
@@ -90,15 +94,12 @@ class Model {
     }
     // scoreInit()
   }
-    // slice or splice selected into current[] --> 2nd phase used[]
+    // QUESTION slice or splice selected into current[] --> 2nd phase used[]
   randomQuest () { // look up js array randomizer
     console.log('running random question')
     this.currentQuestion = this.cards[Math.floor(Math.random() * this.cards.length)]
     return this.displayCard(this.currentQuestion)
   }
-  // thought process -- the scoring doesn't start until initiated by user
-  // scoreInit () {
-    // if (this.div1 || this.div2 || this.div3 || this.div4) {
   score (response) { // if correct: runs score + always runs visual response & randomQuest
     if (response === this.currentQuestion.answer) {
       console.log('correct')
@@ -112,3 +113,5 @@ class Model {
     // }
   // }
 } // close class model
+
+// QUESTION Start Game Init () -- randomQuest () && Timer ()
