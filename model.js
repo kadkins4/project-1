@@ -116,7 +116,8 @@ class Model {
   score (response) { // if correct: runs score + always runs visual response & randomQuest
     if (response === this.currentQuestion.answer) {
       this.currentScore += 5 // score up
-      $('.points').text(this.currentScore) // function visual response (visual)
+      $('.points').text(this.currentScore)
+       // function visual response (visual)
     } else {
       console.log('incorrect')
     }
