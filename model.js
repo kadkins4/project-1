@@ -11,7 +11,7 @@ class Model {
   constructor () {
     this.cards = [ // question pool
       {q: 'Which of these is NOT a fish?', options: ['Filet Mignon', 'Gefilte', 'Tilapia', 'Herring'], answer: 'Filet Mignon' },
-      {q: 'In Game of Thrones, this character pushed from a window in the first episode.', options: ['Bran', 'Tyrion', 'Ned', 'Arya'], answer: 'Bran'},
+      {q: 'In Game of Thrones, this character is pushed from a window in the first episode.', options: ['Bran', 'Tyrion', 'Ned', 'Arya'], answer: 'Bran'},
       {q: 'What band sings the song, "(I can\'t get no) Satisfaction"', options: ['The Rolling Stones', 'Dave Matthews Band', 'Red Hot Chili Peppers', 'Goo Goo Dolls'], answer: 'The Rolling Stones'},
       {q: "In Game of Thrones, the Lannister's sigil is a", options: ['Lion', 'Raven', 'Dire Wolf', 'Flower'], answer: 'Lion'},
       {q: 'Master Chief is the main character in what popular video game?', options: ['Halo', 'Counter-Strike', 'SuperMario', 'Star Wars: Battleground'], answer: 'Halo'},
