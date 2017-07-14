@@ -55,7 +55,7 @@ h1 {
 .question-container {
   width: 745px;
   height: 195px;
-  padding: 10px;
+  padding: 5px;
   border: 2px solid rgba(0,0,0,.2);
   border-radius: 15%;
   background: rgba(134,134,134,.4);
@@ -63,7 +63,8 @@ h1 {
 
 .problem {
   font-family: 'Tillana', cursive;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -80,14 +81,17 @@ h1 {
 .option {
   height: 108px;
   width: 350px;
-  color: #0E7E15;
+  color: #042756;
+  background-color: yellow;
+  box-sizing: border-box;
+  padding: 12px 5px;
   text-align: center;
   border: 2px solid blue;
   margin: 5px;
   font-family: 'Fondamento', cursive;
   font-size: 26px;
   text-align: center;
-  line-height: 70px;
+  vertical-align: middle;
   border-radius: 17%;
   box-shadow: inset 0 10px 35px #000000;
 }

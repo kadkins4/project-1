@@ -55,8 +55,8 @@ class Model {
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
-    this.usedCards = []
-    this.div1 = $('.a0')
+    this.usedCards = [] // empty array to store used
+    this.div1 = $('.a0') // answer clicks
     this.div1.click(() => { this.score(this.div1.text()) })
     this.div2 = $('.a1')
     this.div2.click(() => { this.score(this.div2.text()) })
@@ -64,7 +64,7 @@ class Model {
     this.div3.click(() => { this.score(this.div3.text()) })
     this.div4 = $('.a3')
     this.div4.click(() => { this.score(this.div4.text()) })
-    this.refresh = $('.game-end')
+    this.refresh = $('.game-end') // refresh game at end
     this.refresh.click(() => { location.reload() })
   }
   timer () {
