@@ -9,7 +9,7 @@ console.log('1. Logic Ready')
 
 class Model {
   constructor () {
-    this.cards = [
+    this.cards = [ // question pool
       {q: 'Which of these is NOT a fish?', options: ['Filet Mignon', 'Gefilte', 'Tilapia', 'Herring'], answer: 'Filet Mignon' },
       {q: 'In Game of Thrones, this character pushed from a window in the first episode.', options: ['Bran', 'Tyrion', 'Ned', 'Arya'], answer: 'Bran'},
       {q: 'What band sings the song, "(I can\'t get no) Satisfaction"', options: ['The Rolling Stones', 'Dave Matthews Band', 'Red Hot Chili Peppers', 'Goo Goo Dolls'], answer: 'The Rolling Stones'},
@@ -79,11 +79,13 @@ class Model {
         $('.time').text('GG')
         $('h1').text('QUiZZLe')
         $('.game-end').click(() => { location.reload() }) // allows reload on question div
-        $('.problem').text(`Your Score: ${self.currentScore}. Click to Restart.`) // displays score
+        $('.problem').text(`Your Score: ${self.currentScore}. Click Here To Restart.`) // displays score
         $('.a0').off() // disables buttons
         $('.a1').off()
         $('.a2').off()
         $('.a3').off()
+        $('.play').removeClass('correct')
+        $('.play').removeClass('incorrect')
       }
     }
   }
@@ -113,12 +115,19 @@ class Model {
     this.cards.splice(index, 1)
     return this.displayCard(this.currentQuestion)
   }
+  // blinkCorrect () {
+  //   $('.correct').fadeIn(500).fadeOut(500)
+  // }
   score (response) { // if correct: runs score + always runs visual response & randomQuest
     if (response === this.currentQuestion.answer) {
       this.currentScore += 5 // score up
       $('.points').text(this.currentScore)
-       // function visual response (visual)
+      $('.play').removeClass('incorrect')
+      $('.play').addClass('correct')
+       // visual response
     } else {
+      $('.play').addClass('incorrect')
+      // visual response
       console.log('incorrect')
     }
     return this.randomQuest()
@@ -137,7 +146,7 @@ class Model {
         clearInterval(initCount)
         $('h1').text('Good Luck, Have Fun')
         this.refresh.off()
-        this.init() // QUESTION How do I 'this' this to make it work?!
+        this.init()
       }
     }
   }
