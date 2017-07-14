@@ -49,7 +49,8 @@ class Model {
       {q: 'In Rocket Power, this is the name Otto gives to people who wears shoes on the beach', options: ['Shoobie', 'Squid', 'Sam', 'Tourist'], answer: 'Shoobie'},
       {q: 'The name of the creator of Nintendo is', options: ['Fusajiro Yamauchi', 'Mario Sanchez', 'Shigeru Miyamoto', 'Gaben'], answer: 'Fusajiro Yamauchi'},
       {q: "'The King in the North' refers to which Game of Thrones character?", options: ['Rob Stark', 'Tyrion Lannister', 'Khaleesi', 'Ned Stark'], answer: 'Rob Stark'},
-      {q: '', options: ['', '', '', ''], answer: ''},
+      {q: 'In Overwatch, this strategy is the act of running past the first line of defense', options: ['Dive', 'Bulldoze', 'Truck Stick', 'Careless'], answer: 'Dive'},
+      {q: 'In video games, this skill describes the ability to control multiple people at once', options: ['micro', 'macro', 'insane hand-eye-brain coordination', 'multitasking'], answer: 'micro'},
       {q: '', options: ['', '', '', ''], answer: ''}
     ]
     this.currentQuestion = null // updates with randomQuest
@@ -77,12 +78,14 @@ class Model {
         clearInterval(counter)
         $('.time').text('GG')
         $('h1').text('QUiZZLe')
+        $('.game-end').click(() => { location.reload() })
         $('.problem').text(`Your Score: ${self.currentScore}. Click to Restart.`) // displays score
         $('.a0').off() // disables buttons
         $('.a1').off()
         $('.a2').off()
         $('.a3').off()
-        $('.question-container').addClass('game-end') // allows for restart
+        // self.refresh.on()
+        // console.log(`self: ${self}`)
       }
     }
   }
@@ -133,6 +136,7 @@ class Model {
       if (initTime === 0) {
         clearInterval(initCount)
         $('h1').text('Good Luck, Have Fun')
+        this.refresh.off()
         this.init() // QUESTION How do I 'this' this to make it work?!
       }
     }

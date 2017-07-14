@@ -21,16 +21,6 @@ h1 {
   margin: 0;
 }
 
-.game-end {
-  top: 200px;
-  left: 200px;
-  border: 3px solid red;
-  background-color: yellow;
-  height: 50px;
-  width: 50px;
-  z-index: 1;
-}
-
 .start-game {
   display: block;
   z-index: 1;
@@ -81,7 +71,7 @@ h1 {
 .option {
   height: 108px;
   width: 350px;
-  color: #5DEE66;
+  color: #0E7E15;
   text-align: center;
   border: 2px solid blue;
   margin: 5px;

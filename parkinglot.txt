@@ -8,7 +8,7 @@ PARKING LOT IDEAS
 -- MINUS points on wrong answer: -5 with skip option only -3
 -- DISABLE ALL EXTRA KEYS
 -- Score Streak sounds
-
+-- box-sizing to allow wrap
 
 
 Copy paste template for new cards:
