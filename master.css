@@ -17,13 +17,18 @@ body {
 
 h1 {
   font-size: 46px;
-  text-transform: uppercase;
   font-family: 'Fondamento', cursive;
   margin: 0;
 }
 
-span {
-  text-transform: lowercase;
+.game-end {
+  top: 200px;
+  left: 200px;
+  border: 3px solid red;
+  background-color: yellow;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
 }
 
 .start-game {
@@ -49,8 +54,9 @@ span {
 }
 
 .question-container {
-  width: 750px;
-  height: 200px;
+  width: 745px;
+  height: 195px;
+  padding: 10px;
   border: 2px solid rgba(0,0,0,.2);
   border-radius: 15%;
   background: rgba(134,134,134,.4);

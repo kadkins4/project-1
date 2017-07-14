@@ -18,7 +18,7 @@ class Model {
       {q: 'Finish the lyrics, song by Alt-J: "...she may contain the urge to run away but hold her down with soggy clothes and ___."', options: ['breezeblocks', 'cash-money', 'fresh-drinks', 'truelove'], answer: 'breezeblocks'},
       {q: "The highest prize pool for DOTA 2's: The International Tournament was...", options: ['$20.5M', '$13.5M', '$100,000', '$234,450'], answer: '$20.5M'},
       {q: 'Which is not a type of beer', options: ['Irish Poppy Arguille', 'Indian Pale Ale', 'Stout', 'Wheat Ale'], answer: 'Irish Poppy Arguille'},
-      {q: 'What store did Dev from Master of None say he was going to as a pickup line on a dating apps?', options: ['Whole Foods', 'Home Depot', 'eXXXotic', 'Target'], answer: 'Whole Foods'},
+      {q: 'What store did Dev from Master of None say he was going to as a pickup line on a dating apps?', options: ['Whole Foods', 'Home Depot', 'that trendy store', 'Target'], answer: 'Whole Foods'},
       {q: "This band's lead singer was told by his father that he sung 'wonderfully off-key'", options: ['Dave Matthews Band', 'Twenty-One Pilots', 'NSYNC', 'Backstreet Boys'], answer: 'Dave Matthews Band'},
       {q: 'In Counter-Strike (CSGO), a knife kill awards how much money?', options: ['1500', '400', '2000', '850'], answer: '1500'},
       {q: 'In Washington, DC: this event takes place nearly every Friday during the summer months.', options: ['Jazz in the Garden', 'DiscotechaMecha', 'PoliticsNParties', 'Madness at the Mall'], answer: ''},
@@ -33,7 +33,7 @@ class Model {
       {q: 'The first commercial arcade video game was...', options: ['Computer Space', 'Space Invaders', 'Tecmo Bowl', 'Kong'], answer: 'Computer Space'},
       {q: '"Heroes never die" is the tagline from what hero in the game OverWatch', options: ['Mercy', 'Roadhog', 'Reaper', 'Tracer'], answer: 'Mercy'},
       {q: 'In the movie, "Aliens" the jokester, Private Hudson said this famous line', options: ['"Game over man, Game Over!"', '"Say hello to my little friend"', '"I\'m the guy who does his job..."', '"I have a particular set of skills"'], answer: ''},
-      {q: 'In a lot of popular competitive video games, these initials representing a region of the world is used to characterize bad gameplay', options: ['NA', 'EU', 'SEA', 'CIS'], answer: 'NA'},
+      {q: 'In a lot of popular competitive video games, these initials represent which region of the world is used to characterize bad gameplay', options: ['NA - North America', 'EU - Europe', 'SEA - Southeastern Asia', 'CIS - Commonwealth of Independent States'], answer: 'NA - North America'},
       {q: 'Camping in video games refers to:', options: ['Standing In One Spot', 'Running Around Carelessly', 'Trying Way Too Hard', 'Only Playing With Friends'], answer: 'Standing In One Spot'},
       {q: "In OverWatch, one of D'Vas taunts is:", options: ['"Is this easy mode?"', '"I woke up like this"', '"I\'m making waffles!"', '"Let\'s break it down"'], answer: '"Is this easy mode?"'},
       {q: "'Throwing' in games refers to:", options: ['A team squandering a substantial lead', 'Baiting a team into a bad play', '#1 rank vs #2 rank', 'Using items all at once'], answer: 'A team squandering a substantial lead'},
@@ -47,7 +47,10 @@ class Model {
       {q: 'In most online arena games, an ambush is called a(n)', options: ['gank', 'jump', 'OOOH WEEE', 'kappa'], answer: 'gank'},
       {q: 'ESPN is to Sports, as ____ is to video games', options: ['Twitch', 'CNN', 'GameStop', 'Vulcun'], answer: 'Twitch'},
       {q: 'In Rocket Power, this is the name Otto gives to people who wears shoes on the beach', options: ['Shoobie', 'Squid', 'Sam', 'Tourist'], answer: 'Shoobie'},
-      {q: 'The name of the creator of Nintendo is', options: ['Fusajiro Yamauchi', 'Mario Sanchez', 'Shigeru Miyamoto', 'Gaben'], answer: 'Fusajiro Yamauchi'}
+      {q: 'The name of the creator of Nintendo is', options: ['Fusajiro Yamauchi', 'Mario Sanchez', 'Shigeru Miyamoto', 'Gaben'], answer: 'Fusajiro Yamauchi'},
+      {q: "'The King in the North' refers to which Game of Thrones character?", options: ['Rob Stark', 'Tyrion Lannister', 'Khaleesi', 'Ned Stark'], answer: 'Rob Stark'},
+      {q: '', options: ['', '', '', ''], answer: ''},
+      {q: '', options: ['', '', '', ''], answer: ''}
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
@@ -60,9 +63,12 @@ class Model {
     this.div3.click(() => { this.score(this.div3.text()) })
     this.div4 = $('.a3')
     this.div4.click(() => { this.score(this.div4.text()) })
+    this.refresh = $('.game-end')
+    this.refresh.click(() => { location.reload() })
   }
   timer () {
     var count = 75
+    var self = this
     var counter = setInterval(time, 1000)
     function time () {
       count = count - 1
@@ -70,8 +76,13 @@ class Model {
       if (count === 0) {
         clearInterval(counter)
         $('.time').text('GG')
-        $('h1').text('Quizzly')
-          // QUESTION call game_end function (visual)
+        $('h1').text('QUiZZLe')
+        $('.problem').text(`Your Score: ${self.currentScore}. Click to Restart.`) // displays score
+        $('.a0').off() // disables buttons
+        $('.a1').off()
+        $('.a2').off()
+        $('.a3').off()
+        $('.question-container').addClass('game-end') // allows for restart
       }
     }
   }
