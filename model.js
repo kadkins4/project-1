@@ -21,18 +21,18 @@ class Model {
       {q: 'What store did Dev from Master of None say he was going to as a pickup line on a dating apps?', options: ['Whole Foods', 'Home Depot', 'that trendy store', 'Target'], answer: 'Whole Foods'},
       {q: "This band's lead singer was told by his father that he sung 'wonderfully off-key'", options: ['Dave Matthews Band', 'Twenty-One Pilots', 'NSYNC', 'Backstreet Boys'], answer: 'Dave Matthews Band'},
       {q: 'In Counter-Strike (CSGO), a knife kill awards how much money?', options: ['1500', '400', '2000', '850'], answer: '1500'},
-      {q: 'In Washington, DC: this event takes place nearly every Friday during the summer months.', options: ['Jazz in the Garden', 'DiscotechaMecha', 'PoliticsNParties', 'Madness at the Mall'], answer: ''},
+      {q: 'In Washington, DC: this event takes place nearly every Friday during the summer months.', options: ['Jazz in the Garden', 'DiscotechaMecha', 'PoliticsNParties', 'Madness at the Mall'], answer: 'Jazz in the Garden'},
       {q: 'This artist is from Washington, DC', options: ['Wale', 'Sylvan Esso', 'Justin Timberlake', 'Trombone Shorty'], answer: 'Wale'},
       {q: 'As of spring 2017, the highest paid eSports player made $2,824,396 and his alias is:', options: ['UNiVeRsE', 'ppd', 'SumaiL', 'Fear'], answer: 'UNiVeRsE'},
       {q: 'The most clever of all the Lannister family is: ', options: ['Tyrion', 'Littlefinger', 'Jamie', 'Cersei'], answer: 'Tyrion'},
       {q: 'Winter Is Coming is the slogan of ...', options: ['The Stark House', 'The Lannister House', 'The Greyjoy House', 'The Wildlings'], answer: 'The Stark House'},
       {q: "The Red Wedding was held at this man's keep", options: ['Walder Frey', 'Tywin Lannister', 'Euron Greyjoy', 'Jorah Mormont'], answer: 'Walder Frey'},
       {q: 'This "party" game involves people trying to figure out who the bad team is, it also has an alternate game called Werewolf', options: ['Mafia', 'Cops and Robbers', 'Hide and Seek', 'Jhuatcan'], answer: 'Mafia'},
-      {q: 'Narcos is a show about this druglord', options: ['Pablo Escobar', 'Joaquin "El Chapo" Guzman', 'Rick Ross', 'Frank Lucas'], answer: ''},
-      {q: 'James Naismith started this sport as a way to keep his student-athletes in shape in the off-season', options: ['Basketball', 'Baseball', 'Football', 'Golf'], answer: ''},
+      {q: 'Narcos is a show about this druglord', options: ['Pablo Escobar', 'Joaquin "El Chapo" Guzman', 'Rick Ross', 'Frank Lucas'], answer: 'Pablo Escobar'},
+      {q: 'James Naismith started this sport as a way to keep his student-athletes in shape in the off-season', options: ['Basketball', 'Baseball', 'Football', 'Golf'], answer: 'Basketball'},
       {q: 'The first commercial arcade video game was...', options: ['Computer Space', 'Space Invaders', 'Tecmo Bowl', 'Kong'], answer: 'Computer Space'},
       {q: '"Heroes never die" is the tagline from what hero in the game OverWatch', options: ['Mercy', 'Roadhog', 'Reaper', 'Tracer'], answer: 'Mercy'},
-      {q: 'In the movie, "Aliens" the jokester, Private Hudson said this famous line', options: ['"Game over man, Game Over!"', '"Say hello to my little friend"', '"I\'m the guy who does his job..."', '"I have a particular set of skills"'], answer: ''},
+      {q: 'In the movie, "Aliens" the jokester, Private Hudson said this famous line', options: ['"Game over man, Game Over!"', '"Say hello to my little friend"', '"I\'m the guy who does his job..."', '"I have a particular set of skills"'], answer: '"Game over man, Game Over!"'},
       {q: 'In a lot of popular competitive video games, these initials represent which region of the world is used to characterize bad gameplay', options: ['NA - North America', 'EU - Europe', 'SEA - Southeastern Asia', 'CIS - Commonwealth of Independent States'], answer: 'NA - North America'},
       {q: 'Camping in video games refers to:', options: ['Standing In One Spot', 'Running Around Carelessly', 'Trying Way Too Hard', 'Only Playing With Friends'], answer: 'Standing In One Spot'},
       {q: "In OverWatch, one of D'Vas taunts is:", options: ['"Is this easy mode?"', '"I woke up like this"', '"I\'m making waffles!"', '"Let\'s break it down"'], answer: '"Is this easy mode?"'},
@@ -51,7 +51,7 @@ class Model {
       {q: "'The King in the North' refers to which Game of Thrones character?", options: ['Rob Stark', 'Tyrion Lannister', 'Khaleesi', 'Ned Stark'], answer: 'Rob Stark'},
       {q: 'In Overwatch, this strategy is the act of running past the first line of defense', options: ['Dive', 'Bulldoze', 'Truck Stick', 'Careless'], answer: 'Dive'},
       {q: 'In video games, this skill describes the ability to control multiple people at once', options: ['micro', 'macro', 'insane hand-eye-brain coordination', 'multitasking'], answer: 'micro'},
-      {q: '', options: ['', '', '', ''], answer: ''}
+      {q: 'This is the term that compeitive gamers use when they fear a game\'s mechanics are becoming too easy for new players to get better', options: ['skill cap', 'training wheels', 'nerfgun', 'sniped'], answer: 'skill cap'}
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
@@ -78,14 +78,12 @@ class Model {
         clearInterval(counter)
         $('.time').text('GG')
         $('h1').text('QUiZZLe')
-        $('.game-end').click(() => { location.reload() })
+        $('.game-end').click(() => { location.reload() }) // allows reload on question div
         $('.problem').text(`Your Score: ${self.currentScore}. Click to Restart.`) // displays score
         $('.a0').off() // disables buttons
         $('.a1').off()
         $('.a2').off()
         $('.a3').off()
-        // self.refresh.on()
-        // console.log(`self: ${self}`)
       }
     }
   }
@@ -107,19 +105,20 @@ class Model {
       $('.a' + i).text(aIP[i])
     }
   }
-    // QUESTION slice or splice selected into current[] --> 2nd phase used[]
   randomQuest () {
-    console.log('running random question')
-    this.currentQuestion = this.cards[Math.floor(Math.random() * this.cards.length)]
+    console.log('generating random question') // picking card
+    var index = [Math.floor(Math.random() * this.cards.length)]
+    this.currentQuestion = this.cards[index]
+    this.usedCards.push(this.cards[index]) // removing from card pool and placing in used pool
+    this.cards.splice(index, 1)
     return this.displayCard(this.currentQuestion)
   }
   score (response) { // if correct: runs score + always runs visual response & randomQuest
     if (response === this.currentQuestion.answer) {
-      console.log('correct')
       this.currentScore += 5 // score up
       $('.points').text(this.currentScore) // function visual response (visual)
     } else {
-      console.log('wrong')
+      console.log('incorrect')
     }
     return this.randomQuest()
   }
