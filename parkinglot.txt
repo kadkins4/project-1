@@ -4,7 +4,6 @@ PARKING LOT IDEAS
   --> Sound?
 -- CORRECT = CHECK
   --> Sound?
--- QUESTIONS used put in separate array
 -- MINUS points on wrong answer: -5 with skip option only -3
 -- DISABLE ALL EXTRA KEYS
 -- Score Streak sounds
