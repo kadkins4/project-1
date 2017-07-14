@@ -51,7 +51,11 @@ class Model {
       {q: "'The King in the North' refers to which Game of Thrones character?", options: ['Rob Stark', 'Tyrion Lannister', 'Khaleesi', 'Ned Stark'], answer: 'Rob Stark'},
       {q: 'In Overwatch, this strategy is the act of running past the first line of defense', options: ['Dive', 'Bulldoze', 'Truck Stick', 'Careless'], answer: 'Dive'},
       {q: 'In video games, this skill describes the ability to control multiple people at once', options: ['micro', 'macro', 'insane hand-eye-brain coordination', 'multitasking'], answer: 'micro'},
-      {q: 'This is the term that compeitive gamers use when they fear a game\'s mechanics are becoming too easy for new players to get better', options: ['skill cap', 'training wheels', 'nerfgun', 'sniped'], answer: 'skill cap'}
+      {q: 'This is the term that compeitive gamers use when they fear a game\'s mechanics are becoming too easy for new players to get better', options: ['skill cap', 'training wheels', 'nerfgun', 'sniped'], answer: 'skill cap'},
+      {q: 'In Breaking Bad, this character was a former student of Mr. White', options: ['Jesse', 'Walter', 'Skylar', 'Gustavo'], answer: 'Jesse'},
+      {q: 'Two Italian plumbers are constantly trying to save a princess from this turtle-like character', options: ['Bowser', 'Mario & Luigi', 'Franklin', 'Peach'], answer: 'Bowser'},
+      {q: 'This former New York Knicks player is a big advocate for E-Sports', options: ['Jeremy Lin', 'Patrick Ewing', 'Rick Fox', 'Allen Iverson'], answer: 'Jeremy Lin'},
+      {q: 'A former LA Lakers player started up his own E-Sports Organization called', options: ['Echo Fox', 'Kobe Sports', 'Shaqqin Co.', 'Odom Oath'], answer: 'Echo Fox'}
     ]
     this.currentQuestion = null // updates with randomQuest
     this.currentScore = 0
